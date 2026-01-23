@@ -5,30 +5,26 @@
     - Repetition will become a problem
 
     How can we refactor this code so it’s easier to maintain?
+
+    Something I learned from this lab was to avoid repition when it comes to incorporating HTML and PHP in one file. Instead, I split it up into different files and used "include" to incorporate it into my document. This is something I will try to keep in mind
+
+    
 */
 
 $items = ["Home", "About", "Contact"];
 
+include "header.php"; 
+
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My PHP Page</title>
-</head>
-<body>
-
-<h1>Welcome</h1>
-
 <ul>
-<?php foreach ($items as $item): ?>
+    <?php foreach ($items as $item): ?>
     <li><?= $item ?></li>
-<?php endforeach; ?>
+    <?php endforeach; ?>
 </ul>
 
-<footer>
-    <p>&copy; 2026</p>
-</footer>
 
-</body>
-</html>
+<?php 
+include "footer.php";
+ ?>
+
